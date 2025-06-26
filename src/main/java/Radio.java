@@ -4,8 +4,18 @@ public class Radio {
     private int maxStation = 9;
     private int minStation = 0;
 
-
     private int currentVolume;
+
+    public Radio(int CountStation){
+        if (CountStation>0) {
+            this.maxStation =CountStation - 1;
+        } else this.maxStation = 1;
+    }
+
+    public Radio(){
+        this.maxStation =9;
+    }
+
 
     public void ClickNextStationBtn() {
         if (currentStation == maxStation) {
@@ -35,7 +45,7 @@ public class Radio {
         return currentStation;
     }
 
-    public void SetVolume(int volume ) {
+    public void SetVolume(int volume) {
         if ((volume < 0) || (volume > 100)) {
             return;
         } else {
@@ -44,17 +54,17 @@ public class Radio {
     }
 
     public void ClickUpVolume() {
-        this.SetVolume(currentVolume+1);
+        this.SetVolume(currentVolume + 1);
 
     }
 
     public void ClickDownVolume() {
-        this.SetVolume(currentVolume-1);
+        this.SetVolume(currentVolume - 1);
     }
-
 
 
     public int GetCurrentVolume() {
         return currentVolume;
     }
+
 }

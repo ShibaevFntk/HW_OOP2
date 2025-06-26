@@ -107,4 +107,17 @@ public class TestRadio {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    void TstMaxStation15() {
+        Radio radio = new Radio(15);
+
+        radio.SetStationBtn(13);
+        int expected = 14;
+
+        radio.ClickPrevStationBtn();
+        long actual = radio.GetCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
 }
